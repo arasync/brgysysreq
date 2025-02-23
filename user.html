@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILE UPLOADS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+          <h1 class="system-title">BARANGAY</h1>
+          <h3 class="system-title request-title">REQUEST</h3>
+          <h3 class="system-title syst-title">SYSTEM</h3>
+          <div class="profile">
+            <img src="pfp.png" alt="Profile Picture">
+            <div class="profile-info">
+              <p class="name">Jenny Gwen</p>
+              <p class="role">Admin</p>
+            </div>
+          </div>
+          <nav>
+            <ul>
+                <li>
+                    <button class="menu-item" onclick="location.href='dashboard.html'">
+                        <img src="qr.png" alt="Download Logo" class="menu-logo">
+                        Dashboard
+                    </button>
+                </li>
+                <li>
+                    <button class="menu-item" onclick="location.href='requests.html'">
+                        <img src="docu.png" alt="Requests Logo" class="menu-logo">
+                        Requests
+                    </button>
+                </li>
+                <li>
+                    <button class="menu-item active" onclick="location.href='user.html'">
+                        <img src="people.png" alt="User Management Logo" class="menu-logo">
+                        User Management
+                    </button>
+                </li>
+                <li>
+                    <button class="menu-item" onclick="location.href='notif.html'">
+                        <img src="notif.png" alt="Notifications Logo" class="menu-logo">
+                        Notifications
+                    </button>
+                </li>
+                <li>
+                    <button class="menu-item" onclick="location.href='login.html'">
+                        <img src="logout.png" alt="Log Out Logo" class="menu-logo">
+                        Log Out
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="main-content">
+      <div class="dashboard-header">
+        <h2>USER MANAGEMENT</h2>
+        <div class="search-container">
+          <input type="text" placeholder="Search here">
+          <img src="search.png" alt="Search Icon" class="search-icon">
+        </div>
+      </div>
+
+      <div class="permissions-section">
+        <div class="permissions">
+            <span>Permissions</span>
+            <select>
+                <option value="all">All</option>
+                <option value="admin">Admin</option>
+                <option value="resident">Resident</option>
+            </select>
+        </div>
+    
+        <div class="joined">
+            <span>Joined Date</span>
+            <select>
+                <option value="anytime">Anytime</option>
+                <option value="today">Today</option>
+                <option value="this-week">This Week</option>
+                <option value="this-month">This Month</option>
+                <option value="this-year">This Year</option>
+                <option value="custom-date">Custom Date</option>
+            </select>
+        </div>
+    
+        <!-- New User Button -->
+        <div class="new-user-container">
+            <button class="new-user">+ New User</button>
+        </div>
+    </div>
+
+      <!-- Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Role</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nish Ubando</td>
+            <td>nishubando@gmail.com</td>
+            <td>08 BRGY East ,Ling</td>
+            <td>09996535789</td>
+            <td>Resident</td>
+            <td>January 7, 2025</td>
+            <td><button class="pending">Pending</button></td>
+          </tr>
+          <tr>
+            <td>Andrea Evan</td>
+            <td>andreaeva@gmail.com</td>
+            <td>24 BRGY West ,Ling</td>
+            <td>09798563578</td>
+            <td>Resident</td>
+            <td>January 7, 2025</td>
+            <td><button class="approved">Approved</button></td>
+          </tr>
+          <tr>
+            <td>Jenny Cutei</td>
+            <td>jennycutei@gmail.com</td>
+            <td>18 BRGY Laban ,Ling</td>
+            <td>09523564567</td>
+            <td>Resident</td>
+            <td>January 6, 2025</td>
+            <td><button class="approved">Approved</button></td>
+          </tr>
+          <tr>
+            <td>Francis Canto</td>
+            <td>francscano@gmail.com</td>
+            <td>07 BRGY Cent ,Pang</td>
+            <td>09259073488</td>
+            <td>Resident</td>
+            <td>January 6, 2025</td>
+            <td><button class="approved">Approved</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+        <!-- Pagination Buttons -->
+        <div class="pagination">
+          <button class="page-button">Previous</button>
+          <button class="page-button active">1</button>
+          <button class="page-button">2</button>
+          <button class="page-button">3</button>
+          <button class="page-button">Next</button>
+        </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
