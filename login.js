@@ -47,3 +47,15 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // If validation passes, redirect to the dashboard
     window.location.href = 'dashboard.html';
 });
+
+// Toggle password visibility
+document.addEventListener('DOMContentLoaded', (event) => {
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+    togglePassword.addEventListener('click', () => {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        togglePassword.classList.toggle('fa-eye-slash');
+    });
+});
+
