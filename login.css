@@ -70,6 +70,26 @@ input {
     margin-top: -5px;
 }
 
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 125%;
+    padding-right: 30px; 
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-97%);
+    cursor: pointer;
+    font-size: 17px;
+    color: #888;
+}
+
 .forgot-password {
     display: inline-block;
     text-align: center;
