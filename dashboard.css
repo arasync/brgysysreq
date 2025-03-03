@@ -17,7 +17,7 @@ body {
 }
 
 .sidebar {
-    background-color: #49479D;
+    background-color: #010066;
     color: white;
     width: 270px;
     padding: 20px;
@@ -27,83 +27,33 @@ body {
     margin-top: 23px;
 }
 
-.system-title {
-    font-weight: 800;
-    font-size: 2.5rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.request-title {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.syst-title {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.profile {
+.logo {
     display: flex;
     align-items: center;
+    justify-content: center; 
     margin-bottom: 20px;
 }
 
-.profile img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 15px;
-    margin-top: 20px;
-    margin-left: 10px;
+.logo img {
+    width: 150px; 
+    height: auto; 
     margin-top: 30px;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: Barlow, sans-serif;
-    margin-top: 20px;
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
-.profile-info .name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.profile-info .role {
-    font-size: 0.8rem;
-    color: #ccc;
-    margin-top: 5px;
 }
 
 nav ul {
     list-style-type: none;
-    margin-top: 40px;
 }
 
 nav ul li {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    width: 100%; /* Ensure the li element takes the full width */
+    width: 100%; 
 }
 
 nav ul li img.menu-logo {
     margin-right: 30px;
-    margin-left: 0px; /* Move the logo slightly to the left */
+    margin-left: 0px; 
 }
 
 nav ul li button {
@@ -117,22 +67,23 @@ nav ul li button {
     cursor: pointer;
     display: flex;
     align-items: center;
-    height: 40px; /* Set a fixed height */
-    padding: 10px; /* Ensure consistent padding */
-    width: 100%; /* Ensure the button takes the full width */
-    transition: background 0.3s, color 0.3s; /* Add transition for smooth effect */
+    height: 40px;
+    padding: 10px;
+    width: 100%; 
+    transition: background 0.3s, color 0.3s, border-radius 0.3s;
+    border-radius: 10px;
 }
 
 nav ul li button:hover {
-    background: #A4A4A4; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
-    border-radius: 10px; /* Add border radius to match the active state */
+    background: #A4A4A4; 
+    color: #fff;
+    border-radius: 10px; 
 }
 
 nav ul li button.active, nav ul li button:hover {
-    background: #A4A4A4; /* Change background color on hover and active */
-    color: #fff; /* Change text color on hover and active */
-    border-radius: 10px; /* Add border radius to match the active state */
+    background: #0C0B48; 
+    color: #fff;
+    border-radius: 10px; 
 }
 
 nav ul li button img {
@@ -155,8 +106,8 @@ nav ul li.active button {
 
 .dashboard-header {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
     margin-top: 20px;
     padding-left: 25px;
@@ -171,51 +122,34 @@ nav ul li.active button {
     font-weight: 800;
 }
 
-.search-container {
-    position: relative;
-    width: 100%;
-    max-width: 1130px;
+.notif-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
 }
 
-.search-container input {
-    width: 100%;
-    padding: 10px 40px 10px 12px; /* Add padding to the right for the icon */
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.search-container .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+.notif-logo {
+    width: 30px;   
+    height: 30px;
 }
 
 .dashboard-stats {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
     gap: 20px;
 }
 
 .dashboard-stats .first-row {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
 }
 
 .dashboard-stats .second-row {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.dashboard-stats .third-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column; 
+    justify-content: flex-end;
 }
 
 .stat {
@@ -232,32 +166,28 @@ nav ul li.active button {
 
 .total-requests-box {
     background-color: #ffffff;
-    width: 1130px; 
-    height: 20px;
+    width: 400px; 
+    height: 480px;
     padding: 30px;
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-left: 30px;
     text-align: left; 
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     min-height: 130px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center; 
     justify-content: flex-start;
     font-family: Barlow, sans-serif;
-}
-
-.total-requests-box img {
-    width: 80px; 
-    height: 80px;
-    margin-right: 30px; 
 }
 
 .total-requests-box .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: center; 
+    margin-bottom: 20px;
 }
 
 .total-requests-box .number {
@@ -276,12 +206,64 @@ nav ul li.active button {
     font-weight: 400;
 }
 
+.total-requests-box canvas {
+    width: 100% !important; 
+    height: auto !important; 
+}
+
+.pending-requests-box {
+    background-color: #ffffff;
+    width: 500px; 
+    height: 205px;
+    padding: 30px;
+    margin-right: 27px;
+    text-align: left; 
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 130px;
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+.pending-requests-box img {
+    width: 100px; 
+    height: 100px;
+    margin-right: 80px; 
+    margin-left: 40px; 
+}
+
+.pending-requests-box .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pending-requests-box .number {
+    font-size: 2.2rem;
+    font-weight: bold; 
+    font-family: Barlow, sans-serif;
+    font-weight: 700;
+    margin-left: 45px;
+}
+
+.pending-requests-box .label {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 10px;
+    font-family: Barlow, sans-serif;
+    font-weight: 400;
+} 
+
 .approved-requests-box {
     background-color: #ffffff;
-    width: 330px;
-    height: 20px;
+    width: 500px; 
+    height: 250px;
     padding: 30px;
-    margin-left: 27px;
+    margin-right: 27px;
     margin-top: 15px;
     text-align: left; 
     border-radius: 15px;
@@ -294,9 +276,10 @@ nav ul li.active button {
 }
 
 .approved-requests-box img {
-    width: 80px;
-    height: 80px;
-    margin-right: 30px;
+    width: 140px; 
+    height: 140px;
+    margin-right: 60px; 
+    margin-left: 20px;
 }
 
 .approved-requests-box .text {
@@ -312,147 +295,10 @@ nav ul li.active button {
     margin: 0; 
     font-family: Barlow, sans-serif;
     font-weight: 700;
+    margin-left: 40px;
 }
 
 .approved-requests-box .label {
-    font-size: 1rem;
-    color: #888;
-    margin-top: 10px; 
-    font-family: Barlow, sans-serif;
-    font-weight: 400;
-}
-
-.rejected-requests-box {
-    background-color: #ffffff;
-    width: 330px; 
-    height: 20px;
-    padding: 30px;
-    margin-right: 27px;
-    margin-top: 15px;
-    text-align: left; 
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    min-height: 130px;
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: flex-start;
-}
-
-.rejected-requests-box img {
-    width: 80px;
-    height: 80px;
-    margin-right: 30px; 
-}
-
-.rejected-requests-box .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.rejected-requests-box .number {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin: 0; 
-    font-family: Barlow, sans-serif;
-    font-weight: 700;
-}
-
-.rejected-requests-box .label {
-    font-size: 1rem;
-    color: #888;
-    margin-top: 10px;
-    font-family: Barlow, sans-serif;
-    font-weight: 400;
-} 
-
-.pending-requests-box {
-    background-color: #ffffff;
-    width: 330px; 
-    height: 20px;
-    padding: 30px;
-    margin-left: 27px;
-    margin-top: 15px;
-    text-align: left; 
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    min-height: 130px;
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: flex-start;
-}
-
-.pending-requests-box img {
-    width: 80px; 
-    height: 80px;
-    margin-right: 30px; 
-}
-
-.pending-requests-box .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; 
-}
-
-.pending-requests-box .number {
-    font-size: 2.2rem; 
-    font-weight: bold;
-    margin: 0; 
-    font-family: Barlow, sans-serif;
-    font-weight: 700;
-}
-
-.pending-requests-box .label {
-    font-size: 1rem;
-    color: #888;
-    margin-top: 10px; 
-    font-family: Barlow, sans-serif;
-    font-weight: 400;
-}
-
-.overdue-requests-box {
-    background-color: #ffffff;
-    width: 330px; 
-    height: 20px;
-    padding: 30px;
-    margin-right: 27px;
-    margin-top: 15px;
-    text-align: left; 
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    min-height: 130px;
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-    justify-content: flex-start;
-}
-
-.overdue-requests-box img {
-    width: 80px; 
-    height: 80px;
-    margin-right: 30px; 
-}
-
-.overdue-requests-box .text {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: flex-start; 
-}
-
-.overdue-requests-box .number {
-    font-size: 2.2rem; 
-    font-weight: bold;
-    margin: 0; 
-    font-family: Barlow, sans-serif;
-    font-weight: 700;
-}
-
-.overdue-requests-box .label {
     font-size: 1rem;
     color: #888;
     margin-top: 10px; 
