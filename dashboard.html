@@ -6,20 +6,16 @@
   <title>DASHBOARD</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dash.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard.js" defer></script>
 </head>
 <body>
 
     <div class="container">
         <div class="sidebar">
-          <h1 class="system-title">BARANGAY</h1>
-          <h3 class="system-title request-title">REQUEST</h3>
-          <h3 class="system-title syst-title">SYSTEM</h3>
-          <div class="profile">
-            <img src="pfp.png" alt="Profile Picture">
-            <div class="profile-info">
-              <p class="name">Jenny Gwen</p>
-              <p class="role">Admin</p>
-            </div>
+          <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
           </div>
           <nav>
             <ul>
@@ -36,15 +32,15 @@
                     </button>
                 </li>
                 <li>
+                  <button class="menu-item" onclick="location.href='status.html'">
+                      <img src="status.png" alt="Status Logo" class="menu-logo">
+                      Status
+                  </button>
+              </li>
+                <li>
                     <button class="menu-item" onclick="location.href='user.html'">
                         <img src="people.png" alt="User Management Logo" class="menu-logo">
                         User Management
-                    </button>
-                </li>
-                <li>
-                    <button class="menu-item" onclick="location.href='notif.html'">
-                        <img src="notif.png" alt="Notifications Logo" class="menu-logo">
-                        Notifications
                     </button>
                 </li>
                 <li>
@@ -59,58 +55,44 @@
 
     <div class="main-content">
       <div class="dashboard-header">
-        <h2>DASHBOARD</h2>
-        <div class="search-container">
-          <input type="text" placeholder="Search here">
-          <img src="search.png" alt="Search Icon" class="search-icon">
+          <h2>DASHBOARD</h2>
+          <button class="notif-button" onclick="location.href='notif.html'">
+              <img src="notif.png" alt="Notifications Logo" class="notif-logo">
+          </button>
+      </div>
+
+      <div class="dashboard-stats">
+        <div class="first-row">
+          <div class="stat total-requests-box">
+            <div class="text">
+              <div class="label">Total Requests</div>
+            </div>
+            <div id="myPieChartContainer">
+              <canvas id="myPieChart" width="400" height="400"></canvas>
+              <div class="chart-legend" id="chartLegend"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="second-row">
+          <div class="stat pending-requests-box">
+            <img src="time.png" alt="Pending Requests">
+            <div class="text">
+              <div class="number" id="pendingRequests">50</div>
+              <div class="label">Pending Requests</div>
+            </div>
+          </div>
+          <div class="stat approved-requests-box">
+            <img src="like.png" alt="Approved Requests">
+            <div class="text">
+              <div class="number" id="approvedRequests">145</div>
+              <div class="label">Approved Requests</div>
+            </div>
+          </div>
         </div>
       </div>
-
-     <div class="dashboard-stats">
-
-  <div class="first-row">
-    <div class="stat total-requests-box">
-      <img src="docs.png" alt="Total Requests">
-      <div class="text">
-        <div class="number">357</div>
-        <div class="label">Total Requests</div>
-      </div>
     </div>
-  </div>
-
-<div class="second-row">
-    <div class="stat approved-requests-box">
-      <img src="like.png" alt="Approved Requests">
-      <div class="text">
-        <div class="number">103</div>
-        <div class="label">Total Requests Approved</div>
-      </div>
-    </div>
-    <div class="stat rejected-requests-box">
-      <img src="cancel.png" alt="Rejected Requests">
-      <div class="text">
-        <div class="number">10</div>
-        <div class="label">Total Requests Rejected</div>
-      </div>
-    </div>
-  </div>
-  
-<div class="third-row">
-    <div class="stat pending-requests-box">
-      <img src="clock.png" alt="Pending Requests">
-      <div class="text">
-        <div class="number">190</div>
-        <div class="label">Pending Requests</div>
-      </div>
-    </div>
-    <div class="stat overdue-requests-box">
-      <img src="time.png" alt="Overdue Requests">
-      <div class="text">
-        <div class="number">54</div>
-        <div class="label">Overdue Requests</div>
-      </div>
-    </div>
-  </div>
+</div>
 
 </body>
 </html>
