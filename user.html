@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FILE UPLOADS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>USER MANAGEMENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="user.css">
 </head>
 <body>
 
     <div class="container">
         <div class="sidebar">
-          <h1 class="system-title">BARANGAY</h1>
-          <h3 class="system-title request-title">REQUEST</h3>
-          <h3 class="system-title syst-title">SYSTEM</h3>
-          <div class="profile">
-            <img src="pfp.png" alt="Profile Picture">
-            <div class="profile-info">
-              <p class="name">Jenny Gwen</p>
-              <p class="role">Admin</p>
-            </div>
+          <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
           </div>
           <nav>
             <ul>
@@ -36,15 +29,15 @@
                     </button>
                 </li>
                 <li>
+                  <button class="menu-item" onclick="location.href='status.html'">
+                      <img src="status.png" alt="Requests Logo" class="menu-logo">
+                      Status
+                  </button>
+              </li>
+                <li>
                     <button class="menu-item active" onclick="location.href='user.html'">
                         <img src="people.png" alt="User Management Logo" class="menu-logo">
                         User Management
-                    </button>
-                </li>
-                <li>
-                    <button class="menu-item" onclick="location.href='notif.html'">
-                        <img src="notif.png" alt="Notifications Logo" class="menu-logo">
-                        Notifications
                     </button>
                 </li>
                 <li>
@@ -60,103 +53,233 @@
     <div class="main-content">
       <div class="dashboard-header">
         <h2>USER MANAGEMENT</h2>
-        <div class="search-container">
-          <input type="text" placeholder="Search here">
-          <img src="search.png" alt="Search Icon" class="search-icon">
-        </div>
+        <button class="notif-button" onclick="location.href='notif.html'">
+          <img src="notif.png" alt="Notifications Logo" class="notif-logo">
+        </button>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search here">
+        <img src="search.png" alt="Search Icon" class="search-icon">
       </div>
 
       <div class="permissions-section">
         <div class="permissions">
-            <span>Permissions</span>
             <select>
-                <option value="all">All</option>
-                <option value="admin">Admin</option>
-                <option value="resident">Resident</option>
+                <option value="all">Permissions</option>
+                <option value="admin">Permissions: All</option>
+                <option value="resident">Permissions: Resident</option>
             </select>
         </div>
     
         <div class="joined">
-            <span>Joined Date</span>
-            <select>
-                <option value="anytime">Anytime</option>
-                <option value="today">Today</option>
-                <option value="this-week">This Week</option>
-                <option value="this-month">This Month</option>
-                <option value="this-year">This Year</option>
-                <option value="custom-date">Custom Date</option>
+            <select id="joined-select" onchange="showCustomDateInput()">
+                <option value="anytime">Joined</option>
+                <option value="custom-date">Joined: Custom Date</option>
             </select>
-        </div>
-    
-        <!-- New User Button -->
-        <div class="new-user-container">
-            <button class="new-user">+ New User</button>
+            <input type="date" id="custom-date-input" style="display: none;">
         </div>
     </div>
 
-      <!-- Table -->
-      <table>
+      <table id="table-page-1">
         <thead>
           <tr>
             <th>Full Name</th>
             <th>Email Address</th>
             <th>Address</th>
             <th>Contact Number</th>
-            <th>Role</th>
             <th>Joined Date</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Nish Ubando</td>
-            <td>nishubando@gmail.com</td>
-            <td>08 BRGY East ,Ling</td>
-            <td>09996535789</td>
-            <td>Resident</td>
-            <td>January 7, 2025</td>
-            <td><button class="pending">Pending</button></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>Andrea Evan</td>
-            <td>andreaeva@gmail.com</td>
-            <td>24 BRGY West ,Ling</td>
-            <td>09798563578</td>
-            <td>Resident</td>
-            <td>January 7, 2025</td>
-            <td><button class="approved">Approved</button></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>Jenny Cutei</td>
-            <td>jennycutei@gmail.com</td>
-            <td>18 BRGY Laban ,Ling</td>
-            <td>09523564567</td>
-            <td>Resident</td>
-            <td>January 6, 2025</td>
-            <td><button class="approved">Approved</button></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
-            <td>Francis Canto</td>
-            <td>francscano@gmail.com</td>
-            <td>07 BRGY Cent ,Pang</td>
-            <td>09259073488</td>
-            <td>Resident</td>
-            <td>January 6, 2025</td>
-            <td><button class="approved">Approved</button></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
 
-        <!-- Pagination Buttons -->
-        <div class="pagination">
-          <button class="page-button">Previous</button>
-          <button class="page-button active">1</button>
-          <button class="page-button">2</button>
-          <button class="page-button">3</button>
-          <button class="page-button">Next</button>
-        </div>
+      <table id="table-page-2" style="display: none;">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table id="table-page-3" style="display: none;">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table id="table-page-Next" style="display: none;">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="pagination">
+        <button class="page-button" onclick="showPage('Previous')">Previous</button>
+        <button class="page-button active" onclick="showPage(1)">1</button>
+        <button class="page-button" onclick="showPage(2)">2</button>
+        <button class="page-button" onclick="showPage(3)">3</button>
+        <button class="page-button" onclick="showPage('Next')">Next</button>
       </div>
     </div>
 </div>
+
+<script src="user.js"></script>
+
 </body>
 </html>
