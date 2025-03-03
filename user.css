@@ -17,7 +17,7 @@ body {
 }
 
 .sidebar {
-    background-color: #49479D;
+    background-color: #010066;
     color: white;
     width: 270px;
     padding: 20px;
@@ -27,83 +27,33 @@ body {
     margin-top: 23px;
 }
 
-.system-title {
-    font-weight: 800;
-    font-size: 2.5rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.request-title {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.syst-title {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.profile {
+.logo {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-.profile img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 15px;
-    margin-top: 20px;
-    margin-left: 10px;
+.logo img {
+    width: 150px; 
+    height: auto; 
     margin-top: 30px;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: Barlow, sans-serif;
-    margin-top: 20px;
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
-.profile-info .name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.profile-info .role {
-    font-size: 0.8rem;
-    color: #ccc;
-    margin-top: 5px;
 }
 
 nav ul {
     list-style-type: none;
-    margin-top: 40px;
 }
 
 nav ul li {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    width: 100%; /* Ensure the li element takes the full width */
+    width: 100%; 
 }
 
 nav ul li img.menu-logo {
     margin-right: 30px;
-    margin-left: 0px; /* Move the logo slightly to the left */
+    margin-left: 0px;
 }
 
 nav ul li button {
@@ -117,22 +67,23 @@ nav ul li button {
     cursor: pointer;
     display: flex;
     align-items: center;
-    height: 40px; /* Set a fixed height */
-    padding: 10px; /* Ensure consistent padding */
-    width: 100%; /* Ensure the button takes the full width */
-    transition: background 0.3s, color 0.3s; /* Add transition for smooth effect */
+    height: 40px; 
+    padding: 10px; 
+    width: 100%;
+    transition: background 0.3s, color 0.3s, border-radius 0.3s;
+    border-radius: 10px;
 }
 
 nav ul li button:hover {
-    background: #A4A4A4; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
-    border-radius: 10px; /* Add border radius to match the active state */
+    background: #A4A4A4; 
+    color: #fff; 
+    border-radius: 10px; 
 }
 
 nav ul li button.active, nav ul li button:hover {
-    background: #A4A4A4; /* Change background color on hover and active */
-    color: #fff; /* Change text color on hover and active */
-    border-radius: 10px; /* Add border radius to match the active state */
+    background: #0C0B48;
+    color: #fff; 
+    border-radius: 10px;
 }
 
 nav ul li button img {
@@ -155,9 +106,9 @@ nav ul li.active button {
 
 .dashboard-header {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
     margin-top: 20px;
     padding-left: 25px;
 }
@@ -175,15 +126,17 @@ nav ul li.active button {
     position: relative;
     width: 100%;
     max-width: 1130px;
-    margin-top: -15px; /* Updated margin to match dashboard.css */
+    margin-left: 25px;
 }
 
 .search-container input {
     width: 100%;
-    padding: 10px 40px 10px 12px; /* Add padding to the right for the icon */
+    padding: 10px 40px 10px 12px; 
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: Barlow, sans-serif;
+    font-size: 15px;
 }
 
 .search-container .search-icon {
@@ -193,17 +146,18 @@ nav ul li.active button {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    margin-top: 7.5px;
 }
 
-.dashboard-header input {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 1130px;
-    margin-top: 15px;
-    min-height: 40px;
+.notif-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 27px; 
+}
+
+.notif-logo {
+    width: 30px; 
+    height: 30px;
 }
 
 .dashboard-stats {
@@ -244,11 +198,9 @@ nav ul li.active button {
 
 .permissions-section {
     display: flex;
-    align-items: center; /* Ensure vertical alignment */
-    gap: 20px; /* Add gap between permissions and joined sections */
+    align-items: center; 
+    gap: 20px;
 }
-
-
 
 .permissions, .joined {
     display: flex;
@@ -259,52 +211,87 @@ nav ul li.active button {
     padding: 8px;
     font-size: 14px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
+    background: url('arrow-down.png') no-repeat right center;
+    background-size: 12px; 
+    margin-top: 40px;
+    margin-left: 25px;
+    font-family: Barlow, sans-serif;;
+    font-weight: 500;
+    color: #010066;
+    font-size: 15px;
 }
 
-/* Table Styles */
+#custom-date-input {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 40px;
+    margin-left: 25px;
+    font-family: Barlow, sans-serif;
+    font-weight: 500;
+    color: #010066;
+    background-color: #ffffff;
+}
+
 table {
-    width: 100%;
+    width: 95.5%;
+    margin-left: 25px;
+    font-size: 15px;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 40px;
+    background-color: #ffffff; 
+    overflow: hidden; 
+    font-family: Barlow, sans-serif;
 }
 
 table th, table td {
-    padding: 12px;
+    padding: 26px;
+    width: 150px; 
+    height: 50px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap; 
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 15px solid #f1f0f0;
 }
 
 table th {
     color: black;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    border-bottom: 2px solid #ddd;
+    height: 50px;
+    border-bottom: 15px solid #f1f0f0;
+    color: #010066;
 }
 
-button {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+table td { 
+    color: #838384;
+    font-weight: 400;
 }
 
-button.approved {
-    color: black;
+table tr:last-child td {
+    border-bottom: 100px solid #f4f1f1; 
 }
 
-/* Pagination Section */
 .pagination {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+    justify-content: flex-start;
+    margin-top: -60px;
+    margin-left: 50px;
 }
 
 .page-button {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
+    padding: 10px 7px;
+    border: 1px solid #f4f1f1;
     border-radius: 4px;
-    background-color: #f7f7f7;
+    background-color: #f4f1f1;
     cursor: pointer;
     font-size: 16px;
     margin-left: 10px;
+    font-family: Barlow, sans-serif;
 }
 
 .page-button:hover {
@@ -316,30 +303,14 @@ button.approved {
     background-color: #ddd;
 }
 
-/* New User Button */
-.new-user-container {
-    display: flex;
-    justify-content: flex-end; /* Align the new user button to the end */
-    margin-top: 0; /* Remove the top margin */
-    margin-left: auto; /* Push the button to the right */
-}
-
-.new-user {
-    background: linear-gradient(to right, #5289F6, #010066);
+.page-button.active {
+    background-color: #010066;
+    height: 35px;
+    justify-content: center;
+    border-radius: 10px;
     color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
 }
 
-.new-user:hover {
-    background-color: #0056b3;
-}
-
-/* Button Section Layout */
 .button-section {
     display: flex;
     justify-content: space-between;
