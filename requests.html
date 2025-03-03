@@ -11,16 +11,9 @@
 
   <div class="container">
     <div class="sidebar">
-      <h1 class="system-title">BARANGAY</h1>
-      <h3 class="system-title request-title">REQUEST</h3>
-      <h3 class="system-title syst-title">SYSTEM</h3>
-      <div class="profile">
-        <img src="pfp.png" alt="Profile Picture">
-        <div class="profile-info">
-          <p class="name">Jenny Gwen</p>
-          <p class="role">Admin</p>
-        </div>
-      </div>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
+          </div>
       <nav>
         <ul>
             <li>
@@ -36,15 +29,15 @@
                 </button>
             </li>
             <li>
-                <button class="menu-item" onclick="location.href='user.html'">
-                    <img src="people.png" alt="User Management Logo" class="menu-logo">
-                    User Management
+                <button class="menu-item" onclick="location.href='status.html'">
+                    <img src="status.png" alt="Requests Logo" class="menu-logo">
+                    Status
                 </button>
             </li>
             <li>
-                <button class="menu-item" onclick="location.href='notif.html'">
-                    <img src="notif.png" alt="Notifications Logo" class="menu-logo">
-                    Notifications
+                <button class="menu-item" onclick="location.href='user.html'">
+                    <img src="people.png" alt="User Management Logo" class="menu-logo">
+                    User Management
                 </button>
             </li>
             <li>
@@ -58,70 +51,89 @@
 </div>
 
 <div class="main-content">
-  <div class="dashboard-header">
-    <h2>REQUESTS</h2>
+    <div class="dashboard-header">
+      <h2>REQUESTS</h2>
+      <button class="notif-button" onclick="location.href='notif.html'">
+        <img src="notif.png" alt="Notifications Logo" class="notif-logo">
+      </button>
+    </div>
     <div class="search-container">
       <input type="text" placeholder="Search here">
       <img src="search.png" alt="Search Icon" class="search-icon">
     </div>
-  </div>
 
-            <div class="requests-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Request</th>
-                            <th>Date Requested</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sophia</td>
-                            <td>Barangay Clearance</td>
-                            <td>Dec. 10, 2024</td>
-                            <td class="rejected">Rejected</td>
-                        </tr>
-                        <tr>
-                            <td>Andrea</td>
-                            <td>Barangay Clearance</td>
-                            <td>Dec. 10, 2024</td>
-                            <td class="rejected">Rejected</td>
-                        </tr>
-                        <tr>
-                            <td>Jenny</td>
-                            <td>Barangay Clearance</td>
-                            <td>Dec. 10, 2024</td>
-                            <td class="rejected">Rejected</td>
-                        </tr>
-                        <tr>
-                            <td>Jenny</td>
-                            <td>Barangay Clearance</td>
-                            <td>Dec. 10, 2024</td>
-                            <td class="rejected">Rejected</td>
-                        </tr>
-                        <tr>
-                            <td>Jenny</td>
-                            <td>Barangay Clearance</td>
-                            <td>Dec. 10, 2024</td>
-                            <td class="rejected">Rejected</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination">
-                <a href="#">Previous</a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">Next</a>
-            </div>
-        </div>
+    <div class="requests-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Request</th>
+                    <th>Date Requested</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name"></td>
+                    <td class="request"></td>
+                    <td class="date"></td>
+                    <td>
+                        <button class="action-button approve" style="display: none;">Approve</button>
+                        <button class="action-button reject" style="display: none;">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name"></td>
+                    <td class="request"></td>
+                    <td class="date"></td>
+                    <td>
+                        <button class="action-button approve" style="display: none;">Approve</button>
+                        <button class="action-button reject" style="display: none;">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name"></td>
+                    <td class="request"></td>
+                    <td class="date"></td>
+                    <td>
+                        <button class="action-button approve" style="display: none;">Approve</button>
+                        <button class="action-button reject" style="display: none;">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name"></td>
+                    <td class="request"></td>
+                    <td class="date"></td>
+                    <td>
+                        <button class="action-button approve" style="display: none;">Approve</button>
+                        <button class="action-button reject" style="display: none;">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name"></td>
+                    <td class="request"></td>
+                    <td class="date"></td>
+                    <td>
+                        <button class="action-button approve" style="display: none;">Approve</button>
+                        <button class="action-button reject" style="display: none;">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+    <div class="pagination">
+        <a href="#">Previous</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">Next</a>
+    </div>
+</div>
+</div>
+
+<script src="requests.js"></script>
 
 </body>
 </html>
