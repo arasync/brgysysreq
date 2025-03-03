@@ -17,93 +17,43 @@ body {
 }
 
 .sidebar {
-    background-color: #49479D;
+    background-color: #010066;
     color: white;
     width: 270px;
     padding: 20px;
     border-radius: 30px;
     margin-left: 25px;
-    height: 820px;
+    height: 680px;
     margin-top: 23px;
 }
 
-.system-title {
-    font-weight: 800;
-    font-size: 2.5rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.request-title {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.syst-title {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: white;
-    font-family: Barlow, sans-serif;
-    min-height: 800;
-}
-
-.profile {
+.logo {
     display: flex;
     align-items: center;
+    justify-content: center; 
     margin-bottom: 20px;
 }
 
-.profile img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 15px;
-    margin-top: 20px;
-    margin-left: 10px;
+.logo img {
+    width: 150px; 
+    height: auto; 
     margin-top: 30px;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: Barlow, sans-serif;
-    margin-top: 20px;
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
-.profile-info .name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.profile-info .role {
-    font-size: 0.8rem;
-    color: #ccc;
-    margin-top: 5px;
 }
 
 nav ul {
     list-style-type: none;
-    margin-top: 40px;
 }
 
 nav ul li {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    width: 100%; /* Ensure the li element takes the full width */
+    width: 100%; 
 }
 
 nav ul li img.menu-logo {
     margin-right: 30px;
-    margin-left: 0px; /* Move the logo slightly to the left */
+    margin-left: 0px; 
 }
 
 nav ul li button {
@@ -117,22 +67,23 @@ nav ul li button {
     cursor: pointer;
     display: flex;
     align-items: center;
-    height: 40px; /* Set a fixed height */
-    padding: 10px; /* Ensure consistent padding */
-    width: 100%; /* Ensure the button takes the full width */
-    transition: background 0.3s, color 0.3s; /* Add transition for smooth effect */
+    height: 40px; 
+    padding: 10px; 
+    width: 100%;
+    transition: background 0.3s, color 0.3s, border-radius 0.3s;
+    border-radius: 10px;
 }
 
 nav ul li button:hover {
-    background: #A4A4A4; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
-    border-radius: 10px; /* Add border radius to match the active state */
+    background: #A4A4A4;
+    color: #fff; 
+    border-radius: 10px; 
 }
 
 nav ul li button.active, nav ul li button:hover {
-    background: #A4A4A4; /* Change background color on hover and active */
-    color: #fff; /* Change text color on hover and active */
-    border-radius: 10px; /* Add border radius to match the active state */
+    background: #0C0B48; 
+    color: #fff; 
+    border-radius: 10px; 
 }
 
 nav ul li button img {
@@ -175,12 +126,12 @@ nav ul li.active button {
     position: relative;
     width: 100%;
     max-width: 1130px;
-    margin-top: -15px; /* Updated margin to match dashboard.css */
+    margin-top: -5px; 
 }
 
 .search-container input {
     width: 100%;
-    padding: 10px 40px 10px 12px; /* Add padding to the right for the icon */
+    padding: 10px 40px 10px 12px; 
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
