@@ -2,34 +2,45 @@ document.addEventListener("DOMContentLoaded", function () {
     const userTableBody = document.querySelector("#user-table tbody");
     const popup = document.getElementById("no-user-popup");
     const searchInput = document.querySelector(".search-container input");
+    const paginationContainer = document.querySelector(".pagination");
     const usersPerPage = 5; // Number of users per page
     let users = [];
     let currentPage = 1;
 
     // Function to display users
-    function displayUsers() {
+    function displayUsers(filteredUsers = null) {
         userTableBody.innerHTML = "";
+        let dataToDisplay = filteredUsers || users;
 
-        if (users.length === 0) {
-            popup.style.display = "block"; // Show the pop-up
+        if (dataToDisplay.length === 0) {
+            popup.style.display = "block"; // Show the pop-up if no users
         } else {
-            popup.style.display = "none"; // Hide the pop-up
+            popup.style.display = "none"; // Hide the pop-up if users exist
 
             let start = (currentPage - 1) * usersPerPage;
             let end = start + usersPerPage;
-            let paginatedUsers = users.slice(start, end);
+            let paginatedUsers = dataToDisplay.slice(start, end);
 
-            paginatedUsers.forEach((user) => {
-                let row = `<tr>
+            paginatedUsers.forEach((user, index) => {
+                let row = document.createElement("tr");
+                row.innerHTML = `
                     <td>${user.fullName}</td>
                     <td>${user.email}</td>
                     <td>${user.address}</td>
                     <td>${user.contact}</td>
-                </tr>`;
-                userTableBody.innerHTML += row;
+                    <td><b>Joined</b></td> 
+                    <td>
+                        <button class="action-btn" onclick="toggleDropdown(${index})">⋮</button>
+                        <div class="dropdown" id="dropdown-${index}" style="display: none;">
+                            <button class="edit-btn" onclick="editUser(${index})">Edit</button>
+                            <button class="delete-btn" onclick="deleteUser(${index})">Delete</button>
+                        </div>
+                    </td>
+                `;
+                userTableBody.appendChild(row);
             });
         }
-        updatePagination();
+        updatePagination(dataToDisplay);
     }
 
     // Function to add a user
@@ -38,13 +49,42 @@ document.addEventListener("DOMContentLoaded", function () {
         displayUsers();
     }
 
+    // Function to delete a user
+    function deleteUser(index) {
+        users.splice(index, 1);
+        displayUsers();
+    }
+
+    // Function to edit a user (simple prompt for demo)
+    function editUser(index) {
+        let newName = prompt("Enter new full name:", users[index].fullName);
+        if (newName) {
+            users[index].fullName = newName;
+            displayUsers();
+        }
+    }
+
+    // Function to toggle dropdown menu
+    window.toggleDropdown = function (index) {
+        document.querySelectorAll(".dropdown").forEach((menu, i) => {
+            menu.style.display = i === index && menu.style.display === "none" ? "block" : "none";
+        });
+    };
+
     // Pagination Logic
-    function updatePagination() {
-        const paginationContainer = document.querySelector(".pagination");
+    function updatePagination(dataToDisplay = users) {
         paginationContainer.innerHTML = "";
 
-        let totalPages = Math.ceil(users.length / usersPerPage);
-        
+        let totalPages = Math.ceil(dataToDisplay.length / usersPerPage);
+        if (totalPages <= 1) return;
+
+        let prevButton = document.createElement("button");
+        prevButton.textContent = "Previous";
+        prevButton.classList.add("page-button");
+        prevButton.onclick = () => goToPage(currentPage - 1);
+        prevButton.disabled = currentPage === 1;
+        paginationContainer.appendChild(prevButton);
+
         for (let i = 1; i <= totalPages; i++) {
             let button = document.createElement("button");
             button.classList.add("page-button");
@@ -53,6 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (i === currentPage) button.classList.add("active");
             paginationContainer.appendChild(button);
         }
+
+        let nextButton = document.createElement("button");
+        nextButton.textContent = "Next";
+        nextButton.classList.add("page-button");
+        nextButton.onclick = () => goToPage(currentPage + 1);
+        nextButton.disabled = currentPage === totalPages;
+        paginationContainer.appendChild(nextButton);
     }
 
     function goToPage(page) {
@@ -71,21 +118,13 @@ document.addEventListener("DOMContentLoaded", function () {
             user.contact.toLowerCase().includes(filter)
         );
 
-        userTableBody.innerHTML = "";
-        if (filteredUsers.length === 0) {
-            userTableBody.innerHTML = `<tr><td colspan="4">No matching users found</td></tr>`;
-        } else {
-            filteredUsers.forEach((user) => {
-                let row = `<tr>
-                    <td>${user.fullName}</td>
-                    <td>${user.email}</td>
-                    <td>${user.address}</td>
-                    <td>${user.contact}</td>
-                </tr>`;
-                userTableBody.innerHTML += row;
-            });
-        }
+        displayUsers(filteredUsers);
     });
+
+    // Show pop-up on page load if no users are registered
+    if (users.length === 0) {
+        popup.style.display = "block";
+    }
 
     // Close pop-up function
     function closePopup() {
