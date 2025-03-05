@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USER MANAGEMENT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="user.css">
 </head>
 <body>
@@ -16,11 +16,11 @@
         </div>
         <nav>
             <ul>
-                <li><button class="menu-item" onclick="location.href='dashboard.html'"><img src="qr.png" alt="
-                <li><button class="menu-item" onclick="location.href='requests.html'"><img src="docu.png" alt=
-                <li><button class="menu-item" onclick="location.href='status.html'"><img src="status.png" alt=
-                <li><button class="menu-item active" onclick="location.href='user.html'"><img src="people.png"
-                <li><button class="menu-item" onclick="location.href='login.html'"><img src="logout.png" alt="
+                <li><button class="menu-item" onclick="location.href='dashboard.html'"><img src="qr.png" alt="Dashboard" class="menu-logo">Dashboard</button></li>
+                <li><button class="menu-item" onclick="location.href='requests.html'"><img src="docu.png" alt="Requests" class="menu-logo">Requests</button></li>
+                <li><button class="menu-item" onclick="location.href='status.html'"><img src="status.png" alt="Status" class="menu-logo">Status</button></li>
+                <li><button class="menu-item active" onclick="location.href='user.html'"><img src="people.png" alt="User Management" class="menu-logo">User Management</button></li>
+                <li><button class="menu-item" onclick="location.href='login.html'"><img src="logout.png" alt="Log Out" class="menu-logo">Log Out</button></li>
             </ul>
         </nav>
     </div>
@@ -52,14 +52,19 @@
                     <th>Email Address</th>
                     <th>Address</th>
                     <th>Contact Number</th>
+                    <th> </th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody>
-                <!-- User data will be inserted dynamically here -->
+                <!-- Users will be dynamically added here -->
             </tbody>
-        </table>
+            </table>
+
+        <!-- Pagination Controls -->
+        <div class="pagination"></div>
     </div>
 </div> 
 <script src="user.js"></script>
- </body>
+   </body>
 </html>
