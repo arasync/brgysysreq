@@ -70,7 +70,7 @@ nav ul li button {
     height: 40px; 
     padding: 10px; 
     width: 100%;
-    transition: background 0.3s, color 0.3s, border-r
+    transition: background 0.3s, color 0.3s, border-radius 0.3s;
     border-radius: 10px;
 }
 
@@ -219,9 +219,9 @@ font-weight: 800;
 
 /* Table styles remain intact */
 table {
-    width: 95.5%;
-    margin-left: 25px;
-    font-size: 15px;
+    width: 84%;
+    margin-left: 20px;
+    font-size: 16px;
     border-collapse: collapse;
     margin-top: 40px;
     background-color: #ffffff; 
@@ -231,7 +231,7 @@ table {
 
 table th, table td {
     padding: 26px;
-    width: 150px; 
+    width: 100px; 
     height: 50px;
     overflow: hidden; 
     text-overflow: ellipsis;
@@ -246,6 +246,62 @@ color: #010066;
 border-bottom: 2px solid #ddd;
 height: 50px;
 }
+
+.action-menu {
+    position: relative;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* Show dropdown when active */
+.action-menu.active .dropdown {
+    display: block;
+}
+
 
 #table td { 
     color: #838384;
