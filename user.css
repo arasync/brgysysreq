@@ -70,7 +70,7 @@ nav ul li button {
     height: 40px; 
     padding: 10px; 
     width: 100%;
-    transition: background 0.3s, color 0.3s, border-radius 0.3s;
+    transition: background 0.3s, color 0.3s, border-r
     border-radius: 10px;
 }
 
@@ -114,12 +114,10 @@ nav ul li.active button {
 }
 
 .dashboard-header h2 {
-    font-size: 1.7rem;
-    color: #333;
-    margin-bottom: 10px;
-    color: #010066;
-    font-family: Barlow, sans-serif;
-    font-weight: 800;
+font-size: 1.7rem;
+color: #010066;
+font-family: Barlow, sans-serif;
+font-weight: 800;
 }
 
 .search-container {
@@ -166,18 +164,8 @@ nav ul li.active button {
     gap: 20px;
 }
 
-.dashboard-stats .first-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.dashboard-stats .second-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
+.dashboard-stats .first-row,
+.dashboard-stats .second-row,
 .dashboard-stats .third-row {
     display: flex;
     justify-content: space-between;
@@ -196,45 +184,40 @@ nav ul li.active button {
     justify-content: center;
 }
 
-.permissions-section {
-    display: flex;
-    align-items: center; 
-    gap: 20px;
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 8px;
+    z-index: 10;
 }
 
-.permissions, .joined {
-    display: flex;
-    gap: 10px;
+.popup-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
-.permissions select, .joined select {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid black;
-    background: url('arrow-down.png') no-repeat right center;
-    background-size: 12px; 
-    margin-top: 40px;
-    margin-left: 25px;
-    font-family: Barlow, sans-serif;;
-    font-weight: 500;
-    color: #010066;
-    font-size: 15px;
+.popup-content button {
+    padding: 10px 15px;
+    background-color: #010066;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-#custom-date-input {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-top: 40px;
-    margin-left: 25px;
-    font-family: Barlow, sans-serif;
-    font-weight: 500;
-    color: #010066;
-    background-color: #ffffff;
+.popup-content button:hover {
+    background-color: #0c0b48;
 }
 
+/* Table styles remain intact */
 table {
     width: 95.5%;
     margin-left: 25px;
@@ -258,16 +241,13 @@ table th, table td {
 }
 
 table th {
-    color: black;
-    background-color: #ffffff; 
-    color: rgb(0, 0, 0); 
-    border-bottom: 2px solid #ddd;
-    height: 50px;
-    border-bottom: 15px solid #f1f0f0;
-    color: #010066;
+background-color: #ffffff; 
+color: #010066;
+border-bottom: 2px solid #ddd;
+height: 50px;
 }
 
-table td { 
+#table td { 
     color: #838384;
     font-weight: 400;
 }
