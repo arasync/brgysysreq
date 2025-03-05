@@ -1,285 +1,299 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USER MANAGEMENT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="user.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <div class="container">
-        <div class="sidebar">
-          <div class="logo">
-            <img src="logo.png" alt="Logo" class="logo">
-          </div>
-          <nav>
-            <ul>
-                <li>
-                    <button class="menu-item" onclick="location.href='dashboard.html'">
-                        <img src="qr.png" alt="Download Logo" class="menu-logo">
-                        Dashboard
-                    </button>
-                </li>
-                <li>
-                    <button class="menu-item" onclick="location.href='requests.html'">
-                        <img src="docu.png" alt="Requests Logo" class="menu-logo">
-                        Requests
-                    </button>
-                </li>
-                <li>
-                  <button class="menu-item" onclick="location.href='status.html'">
-                      <img src="status.png" alt="Requests Logo" class="menu-logo">
-                      Status
-                  </button>
-              </li>
-                <li>
-                    <button class="menu-item active" onclick="location.href='user.html'">
-                        <img src="people.png" alt="User Management Logo" class="menu-logo">
-                        User Management
-                    </button>
-                </li>
-                <li>
-                    <button class="menu-item" onclick="location.href='login.html'">
-                        <img src="logout.png" alt="Log Out Logo" class="menu-logo">
-                        Log Out
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    
-    <div class="main-content">
-      <div class="dashboard-header">
-        <h2>USER MANAGEMENT</h2>
-        <button class="notif-button" onclick="location.href='notif.html'">
-          <img src="notif.png" alt="Notifications Logo" class="notif-logo">
-        </button>
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Search here">
-        <img src="search.png" alt="Search Icon" class="search-icon">
-      </div>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex; 
+    min-height: 100vh;
+}
 
-      <div class="permissions-section">
-        <div class="permissions">
-            <select>
-                <option value="all">Permissions</option>
-                <option value="admin">Permissions: All</option>
-                <option value="resident">Permissions: Resident</option>
-            </select>
-        </div>
-    
-        <div class="joined">
-            <select id="joined-select" onchange="showCustomDateInput()">
-                <option value="anytime">Joined</option>
-                <option value="custom-date">Joined: Custom Date</option>
-            </select>
-            <input type="date" id="custom-date-input" style="display: none;">
-        </div>
-    </div>
+.container {
+    display: flex;
+    width: 100%;
+}
 
-      <table id="table-page-1">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Email Address</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th>Joined Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+.sidebar {
+    background-color: #010066;
+    color: white;
+    width: 270px;
+    padding: 20px;
+    border-radius: 30px;
+    margin-left: 25px;
+    height: 680px;
+    margin-top: 23px;
+}
 
-      <table id="table-page-2" style="display: none;">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Email Address</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th>Joined Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-      <table id="table-page-3" style="display: none;">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Email Address</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th>Joined Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+.logo img {
+    width: 150px; 
+    height: auto; 
+    margin-top: 30px;
+}
 
-      <table id="table-page-Next" style="display: none;">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Email Address</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th>Joined Date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+nav ul {
+    list-style-type: none;
+}
 
+nav ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; 
+}
 
-      <div class="pagination">
-        <button class="page-button" onclick="showPage('Previous')">Previous</button>
-        <button class="page-button active" onclick="showPage(1)">1</button>
-        <button class="page-button" onclick="showPage(2)">2</button>
-        <button class="page-button" onclick="showPage(3)">3</button>
-        <button class="page-button" onclick="showPage('Next')">Next</button>
-      </div>
-    </div>
-</div>
+nav ul li img.menu-logo {
+    margin-right: 30px;
+    margin-left: 0px;
+}
 
-<script src="user.js"></script>
+nav ul li button {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: Barlow, sans-serif;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px; 
+    padding: 10px; 
+    width: 100%;
+    transition: background 0.3s, color 0.3s, border-rad
+    border-radius: 10px;
+}
 
-</body>
-</html>
+nav ul li button:hover {
+    background: #A4A4A4; 
+    color: #fff; 
+    border-radius: 10px; 
+}
+
+nav ul li button.active, nav ul li button:hover {
+    background: #0C0B48;
+    color: #fff; 
+    border-radius: 10px;
+}
+
+nav ul li button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 80px;
+}
+
+nav ul li.active button {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 30px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
+    margin-top: 20px;
+    padding-left: 25px;
+}
+
+.dashboard-header h2 {
+font-size: 1.7rem;
+color: #010066;
+font-family: Barlow, sans-serif;
+font-weight: 800;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 1130px;
+    margin-left: 25px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 40px 10px 12px; 
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Barlow, sans-serif;
+    font-size: 15px;
+}
+
+.search-container .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.notif-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 27px; 
+}
+
+.notif-logo {
+    width: 30px; 
+    height: 30px;
+}
+
+.dashboard-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-stats .first-row,
+.dashboard-stats .second-row,
+.dashboard-stats .third-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.stat {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.popup-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.popup-content button {
+    padding: 10px 15px;
+    background-color: #010066;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-content button:hover {
+    background-color: #0c0b48;
+}
+
+/* Table styles remain intact */
+table {
+    width: 95.5%;
+    margin-left: 25px;
+    font-size: 15px;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background-color: #ffffff; 
+    overflow: hidden; 
+    font-family: Barlow, sans-serif;
+}
+
+table th, table td {
+    padding: 26px;
+    width: 150px; 
+    height: 50px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    text-align: left;
+    border-bottom: 15px solid #f1f0f0;
+}
+
+table th {
+background-color: #ffffff; 
+color: #010066;
+border-bottom: 2px solid #ddd;
+height: 50px;
+}
+
+#table td { 
+    color: #838384;
+    font-weight: 400;
+}
+
+table tr:last-child td {
+    border-bottom: 100px solid #f4f1f1; 
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -60px;
+    margin-left: 50px;
+}
+
+.page-button {
+    padding: 10px 7px;
+    border: 1px solid #f4f1f1;
+    border-radius: 4px;
+    background-color: #f4f1f1;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    font-family: Barlow, sans-serif;
+}
+
+.page-button:hover {
+    background-color: #e1e1e1;
+}
+
+.page-button:disabled {
+    cursor: not-allowed;
+    background-color: #ddd;
+}
+
+.page-button.active {
+    background-color: #010066;
+    height: 35px;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+}
+
+.button-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
