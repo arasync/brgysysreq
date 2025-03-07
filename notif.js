@@ -6,7 +6,7 @@ function showTab(tabName) {
     });
 
     // Add the active class to the clicked tab
-    const activeTab = document.querySelector(.tab[onclick="showTab('${tabName}')"]);
+    const activeTab = document.querySelector(`.tab[onclick="showTab('${tabName}')"]`);
     if (activeTab) {
         activeTab.classList.add('active');
     }
