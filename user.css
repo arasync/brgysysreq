@@ -157,7 +157,7 @@ font-weight: 800;
     width: 30px; 
     height: 30px;
 }
-
+/* DASHBOARD STATS */
 .dashboard-stats {
     display: flex;
     flex-direction: column;
@@ -170,6 +170,7 @@ font-weight: 800;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 .stat {
@@ -182,9 +183,11 @@ font-weight: 800;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    max-width: 300px; /* Prevents excessive stretching */
 }
 
-/* Popup Styling */
+/* POPUP STYLING */
 .popup {
     display: none;
     position: fixed;
@@ -192,61 +195,54 @@ font-weight: 800;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     border-radius: 8px;
-    z-index: 10;
+    z-index: 1000;
+    width: 300px;
 }
 
 .popup-content p {
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.popup-content button {
-    padding: 10px 15px;
-    background-color: #010066;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.popup-content button:hover {
-    background-color: #0c0b48;
-}
-
-/* Table styles remain intact */
+/* TABLE STYLING */
 table {
-    width: 84%;
-    margin-left: 20px;
+    width: 95%;
+    margin: 40px auto;
+    margin-left: 20px auto;
     font-size: 16px;
     border-collapse: collapse;
-    margin-top: 40px;
     background-color: #ffffff; 
-    overflow: hidden; 
-    font-family: Barlow, sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 table th, table td {
-    padding: 26px;
-    width: 100px; 
+    padding: 15px;
+    width: auto;
     height: 50px;
     overflow: hidden; 
     text-overflow: ellipsis;
     white-space: nowrap; 
     text-align: left;
-    border-bottom: 15px solid #f1f0f0;
+    border-bottom: 2px solid #f1f0f0;
 }
 
 table th {
-background-color: #ffffff; 
-color: #010066;
-border-bottom: 2px solid #ddd;
-height: 50px;
+    background-color: #ffffff; 
+    color: #010066;
+    border-bottom: 2px solid #ddd;
+    height: 50px;
 }
 
+#table td { 
+    color: #838384;
+    font-weight: 400;
+}
+
+/* TABLE ACTION MENU */
 .action-menu {
     position: relative;
 }
@@ -268,6 +264,7 @@ height: 50px;
     border-radius: 5px;
     overflow: hidden;
     z-index: 10;
+    min-width: 120px;
 }
 
 .dropdown button {
@@ -277,6 +274,10 @@ height: 50px;
     text-align: left;
     cursor: pointer;
     font-size: 14px;
+}
+
+.dropdown button:hover {
+    background-color: #f5f5f5;
 }
 
 .edit-btn {
@@ -302,32 +303,24 @@ height: 50px;
     display: block;
 }
 
-
-#table td { 
-    color: #838384;
-    font-weight: 400;
-}
-
-table tr:last-child td {
-    border-bottom: 100px solid #f4f1f1; 
-}
-
+/* PAGINATION */
 .pagination {
     display: flex;
-    justify-content: flex-start;
-    margin-top: -60px;
-    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .page-button {
-    padding: 10px 7px;
+    padding: 10px 15px;
     border: 1px solid #f4f1f1;
     border-radius: 4px;
     background-color: #f4f1f1;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 10px;
-    font-family: Barlow, sans-serif;
+    margin: 0 5px;
+    font-family: 'Barlow', sans-serif;
+    transition: background 0.3s ease;
 }
 
 .page-button:hover {
@@ -341,12 +334,11 @@ table tr:last-child td {
 
 .page-button.active {
     background-color: #010066;
-    height: 35px;
-    justify-content: center;
-    border-radius: 10px;
     color: white;
+    font-weight: bold;
 }
 
+/* BUTTON SECTION */
 .button-section {
     display: flex;
     justify-content: space-between;
