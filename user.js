@@ -6,16 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const usersPerPage = 8; // Number of users per page
     let users = [];
     let currentPage = 1;
+    let filteredUsers = null; // Track filtered users for search
 
     // Function to display users
-    function displayUsers(filteredUsers = null) {
+    function displayUsers(data = users) {
         userTableBody.innerHTML = "";
-        let dataToDisplay = filteredUsers || users;
+        let dataToDisplay = filteredUsers || data;
 
         if (dataToDisplay.length === 0) {
-            popup.style.display = "block"; // Show the pop-up if no users
+            popup.style.display = "block"; // Show pop-up if no users
         } else {
-            popup.style.display = "none"; // Hide the pop-up if users exist
+            popup.style.display = "none"; // Hide pop-up if users exist
 
             let start = (currentPage - 1) * usersPerPage;
             let end = start + usersPerPage;
@@ -30,10 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     <td>${user.contact}</td>
                     <td><b>Joined</b></td> 
                     <td>
-                        <button class="action-btn" onclick="toggleDropdown(${index})">⋮</button>
-                        <div class="dropdown" id="dropdown-${index}" style="display: none;">
-                            <button class="edit-btn" onclick="editUser(${index})">Edit</button>
-                            <button class="delete-btn" onclick="deleteUser(${index})">Delete</button>
+                        <div class="action-menu">
+                            <button class="menu-btn" onclick="toggleDropdown(${index})">⋮</button>
+                            <div class="dropdown" id="dropdown-${index}">
+                                <button class="edit-btn" onclick="editUser(${index})">Edit</button>
+                                <button class="delete-btn" onclick="deleteUser(${index})">Delete</button>
+                            </div>
                         </div>
                     </td>
                 `;
@@ -46,20 +49,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to add a user
     function addUser(fullName, email, address, contact) {
         users.push({ fullName, email, address, contact });
+        filteredUsers = null; // Reset filtered users
+        currentPage = 1; // Reset pagination
         displayUsers();
     }
 
     // Function to delete a user
     function deleteUser(index) {
-        users.splice(index, 1);
+        let actualIndex = (currentPage - 1) * usersPerPage + index;
+        users.splice(actualIndex, 1);
+        filteredUsers = null; // Reset filtered users
+        if (currentPage > Math.ceil(users.length / usersPerPage)) {
+            currentPage = Math.max(1, currentPage - 1); // Adjust page if needed
+        }
         displayUsers();
     }
 
-    // Function to edit a user (simple prompt for demo)
+    // Function to edit a user
     function editUser(index) {
-        let newName = prompt("Enter new full name:", users[index].fullName);
-        if (newName) {
-            users[index].fullName = newName;
+        let actualIndex = (currentPage - 1) * usersPerPage + index;
+        let newName = prompt("Enter new full name:", users[actualIndex].fullName);
+        if (newName && newName.trim() !== "") {
+            users[actualIndex].fullName = newName.trim();
             displayUsers();
         }
     }
@@ -67,15 +78,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to toggle dropdown menu
     window.toggleDropdown = function (index) {
         document.querySelectorAll(".dropdown").forEach((menu, i) => {
-            menu.style.display = i === index && menu.style.display === "none" ? "block" : "none";
+            menu.style.display = i === index ? "block" : "none";
+        });
+
+        document.addEventListener("click", function closeDropdown(event) {
+            if (!event.target.closest(".action-menu")) {
+                document.querySelectorAll(".dropdown").forEach((menu) => {
+                    menu.style.display = "none";
+                });
+                document.removeEventListener("click", closeDropdown);
+            }
         });
     };
 
     // Pagination Logic
-    function updatePagination(dataToDisplay = users) {
+    function updatePagination(data = users) {
         paginationContainer.innerHTML = "";
 
-        let totalPages = Math.ceil(dataToDisplay.length / usersPerPage);
+        let totalPages = Math.ceil(data.length / usersPerPage);
         if (totalPages <= 1) return;
 
         let prevButton = document.createElement("button");
@@ -111,13 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Search Function
     searchInput.addEventListener("input", function () {
         let filter = searchInput.value.toLowerCase();
-        let filteredUsers = users.filter((user) =>
+        filteredUsers = users.filter((user) =>
             user.fullName.toLowerCase().includes(filter) ||
             user.email.toLowerCase().includes(filter) ||
             user.address.toLowerCase().includes(filter) ||
             user.contact.toLowerCase().includes(filter)
         );
 
+        currentPage = 1; // Reset pagination for filtered results
         displayUsers(filteredUsers);
     });
 
@@ -127,9 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Close pop-up function
-    function closePopup() {
+    window.closePopup = function () {
         popup.style.display = "none";
-    }
-    window.closePopup = closePopup;
+    };
 });
-
