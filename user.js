@@ -1,39 +1,95 @@
-function showPage(page) {
-    document.getElementById('table-page-1').style.display = 'none';
-    document.getElementById('table-page-2').style.display = 'none';
-    document.getElementById('table-page-3').style.display = 'none';
+document.addEventListener("DOMContentLoaded", function () {
+    const userTableBody = document.querySelector("#user-table tbody");
+    const popup = document.getElementById("no-user-popup");
+    const searchInput = document.querySelector(".search-container input");
+    const usersPerPage = 5; // Number of users per page
+    let users = [];
+    let currentPage = 1;
 
-    if (page === 1) {
-        document.getElementById('table-page-1').style.display = 'table';
-    } else if (page === 2) {
-        document.getElementById('table-page-2').style.display = 'table';
-    } else if (page === 3) {
-        document.getElementById('table-page-3').style.display = 'table';
+    // Function to display users
+    function displayUsers() {
+        userTableBody.innerHTML = "";
+
+        if (users.length === 0) {
+            popup.style.display = "block"; // Show the pop-up
+        } else {
+            popup.style.display = "none"; // Hide the pop-up
+
+            let start = (currentPage - 1) * usersPerPage;
+            let end = start + usersPerPage;
+            let paginatedUsers = users.slice(start, end);
+
+            paginatedUsers.forEach((user) => {
+                let row = `<tr>
+                    <td>${user.fullName}</td>
+                    <td>${user.email}</td>
+                    <td>${user.address}</td>
+                    <td>${user.contact}</td>
+                </tr>`;
+                userTableBody.innerHTML += row;
+            });
+        }
+        updatePagination();
     }
 
-    const buttons = document.querySelectorAll('.pagination .page-button');
-    buttons.forEach(button => button.classList.remove('active'));
-
-    if (page === 'Previous') {
-        // Handle previous page logic
-    } else if (page === 'Next') {
-        // Handle next page logic
-    } else {
-        document.querySelector(`.pagination .page-button:nth-child(${page + 1})`).classList.add('active');
+    // Function to add a user
+    function addUser(fullName, email, address, contact) {
+        users.push({ fullName, email, address, contact });
+        displayUsers();
     }
-}
 
-function showCustomDateInput() {
-    const select = document.getElementById('joined-select');
-    const dateInput = document.getElementById('custom-date-input');
-    if (select.value === 'custom-date') {
-        dateInput.style.display = 'block';
-    } else {
-        dateInput.style.display = 'none';
+    // Pagination Logic
+    function updatePagination() {
+        const paginationContainer = document.querySelector(".pagination");
+        paginationContainer.innerHTML = "";
+
+        let totalPages = Math.ceil(users.length / usersPerPage);
+        
+        for (let i = 1; i <= totalPages; i++) {
+            let button = document.createElement("button");
+            button.classList.add("page-button");
+            button.textContent = i;
+            button.onclick = () => goToPage(i);
+            if (i === currentPage) button.classList.add("active");
+            paginationContainer.appendChild(button);
+        }
     }
-}
 
-// Call the function to update the date input visibility on page load
-document.addEventListener('DOMContentLoaded', function() {
-    showCustomDateInput();
+    function goToPage(page) {
+        if (page < 1 || page > Math.ceil(users.length / usersPerPage)) return;
+        currentPage = page;
+        displayUsers();
+    }
+
+    // Search Function
+    searchInput.addEventListener("input", function () {
+        let filter = searchInput.value.toLowerCase();
+        let filteredUsers = users.filter((user) =>
+            user.fullName.toLowerCase().includes(filter) ||
+            user.email.toLowerCase().includes(filter) ||
+            user.address.toLowerCase().includes(filter) ||
+            user.contact.toLowerCase().includes(filter)
+        );
+
+        userTableBody.innerHTML = "";
+        if (filteredUsers.length === 0) {
+            userTableBody.innerHTML = `<tr><td colspan="4">No matching users found</td></tr>`;
+        } else {
+            filteredUsers.forEach((user) => {
+                let row = `<tr>
+                    <td>${user.fullName}</td>
+                    <td>${user.email}</td>
+                    <td>${user.address}</td>
+                    <td>${user.contact}</td>
+                </tr>`;
+                userTableBody.innerHTML += row;
+            });
+        }
+    });
+
+    // Close pop-up function
+    function closePopup() {
+        popup.style.display = "none";
+    }
+    window.closePopup = closePopup;
 });
