@@ -75,7 +75,7 @@ nav ul li button {
 }
 
 nav ul li button:hover {
-    background: #A4A4A4;
+    background: #a4a4a4;
     color: #fff;
     border-radius: 10px; 
 }
@@ -122,33 +122,7 @@ nav ul li.active button {
     font-weight: 800;
 }
 
-.search-container {
-    position: relative;
-    width: 100%;
-    max-width: 1130px;
-    margin-bottom: 30px;
-    margin-left: 25px; 
-    margin-top: 10px;
-}
-
-.search-container input {
-    width: 100%;
-    padding: 10px 40px 10px 12px; 
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.search-container .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-}
-
-.notif-button {
+ .notif-button {
     background: none;
     border: none;
     cursor: pointer;
@@ -159,86 +133,89 @@ nav ul li.active button {
     width: 30px; 
     height: 30px;
 }
-
+/* General Table Styling */
 .requests-table {
-    width: 1130px;
+    width: 95%;
+    max-width: 1130px;
     background: white;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-left: 25px;
-    font-family: Barlow, sans-serif;
+    margin: 20px auto;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: auto;
 }
 
+/* Table Structure */
 table {
     width: 100%;
     border-collapse: collapse;
-    border-spacing: 0 10px;
+    border-spacing: 0;
 }
 
 table th, table td {
-    padding: 25px;
+    padding: 15px;
     text-align: left;
+    border-bottom: 2px solid #ddd;
 }
 
-table th {
-    border-bottom: 2px solid #ddd;
+ table th {
     color: navy;
     font-weight: bold;
+    font-size: 1rem;
+    background-color: #f5f5f5;
 }
 
 table td {
-    border-bottom: 2px solid #ddd;
-    padding: 35px;
+    font-size: 0.95rem;
+    color: #333;
 }
 
+/* Last row styling */
 table tr:last-child td {
     border-bottom: none;
-    padding: 40px;
-    background-color: white; 
-}
+ }
 
+/* Status Column Styling */
 .rejected {
     color: red;
     font-weight: bold;
 }
 
+.approved {
+    color: green;
+    font-weight: bold;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+/* Pagination */
 .pagination {
-    margin-top: -50px;
-    margin-right: 50px;
-    justify-content: flex-end;
+    margin-top: 15px;
     display: flex;
+    justify-content: center;
     gap: 8px;
-    font-family: Barlow, sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 .pagination a {
     text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 8px 12px;
+    border-radius: 6px;
     color: black;
-    background: white;
+    background: #f0f0f0;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out;
 }
 
 .pagination a.active {
-    background: white;
-    color: black;
+    background: navy;
+    color: white;
 }
 
 .pagination a:hover {
     background: #acacb4;
-}
-
-.pagination-table {
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.pagination-table td {
-    padding: 10px;
-    font-size: 1rem;
-    color: #010066;
-    font-family: Barlow, sans-serif;
-    font-weight: 700;
-}
+ }

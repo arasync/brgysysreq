@@ -14,7 +14,7 @@
     <div class="container">
         <div class="sidebar">
           <div class="logo">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="logo2.png" alt="Logo" class="logo">
           </div>
           <nav>
             <ul>
@@ -59,11 +59,7 @@
               <img src="notif.png" alt="Notifications Logo" class="notif-logo">
           </button>
       </div>
-      <div class="search-container">
-          <input type="text" placeholder="Search here">
-          <img src="search.png" alt="Search Icon" class="search-icon">
-      </div>
-
+    
       <div class="requests-table">
         <table>
             <thead>
@@ -74,51 +70,24 @@
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="rejected"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="rejected"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="rejected"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="rejected"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="rejected"></td>
-                </tr>
+            <tbody id="statusTableBody">
+                <!-- Rows will be inserted dynamically -->
             </tbody>
         </table>
+        <!-- Pagination (Initially hidden) -->
+        <div class="pagination" id="pagination" style="display: none;">
+            <a href="#" id="prevPage">Previous</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#" id="nextPage">Next</a>
+        </div>
     </div>
+</div>
+</div>
 
-    <div class="pagination">
-        <a href="#">Previous</a>
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">Next</a>
-    </div>
-</div>
-</div>
+<script src="status.js"></script>
 
 </body>
 </html>

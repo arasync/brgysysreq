@@ -127,7 +127,7 @@ nav ul li.active button {
     width: 100%;
     max-width: 1130px;
     margin-bottom: 30px;
-    margin-left: 25px; 
+    margin-left: 50px; 
     margin-top: 10px;
 }
 
@@ -162,83 +162,36 @@ nav ul li.active button {
     height: 30px;
 }
 
-.dashboard-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.dashboard-stats .first-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.dashboard-stats .second-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.dashboard-stats .third-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.stat {
-    background-color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.requests-table {
-    width: 1130px;
+ .requests-table {
+    width: 100%;
+    max-width: 1130px;
     background: white;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-left: 25px;
+    margin: 20px auto;
     font-family: Barlow, sans-serif;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border-spacing: 0 10px;
-}
+ }
 
 table th, table td {
-    padding: 25px;
-    padding: 20px 90px;
+    padding: 15px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-table th {
-    border-bottom: 2px solid #ddd;
+ table th {
     color: navy;
     font-weight: bold;
-}
-
-table td {
-    border-bottom: 2px solid #ddd;
-    padding: 35px 90px;
-}
-
-table tr:last-child td {
-    border-bottom: none;
-    padding: 40px;
-    background-color: white; 
+    background: #f4f4f4;
 }
 
 .action-button {
-    padding: 10px 15px;
+    padding: 8px 12px;
     font-size: 14px;
     font-family: Barlow, sans-serif;
     font-weight: 600;
@@ -249,7 +202,7 @@ table tr:last-child td {
 }
 
 .action-button.approve {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
 }
 
@@ -258,49 +211,43 @@ table tr:last-child td {
 }
 
 .action-button.reject {
-    background-color: #f44336; 
+    background-color: #f44336;
     color: white;
 }
 
 .action-button.reject:hover {
-    background-color: #e53935; 
+    background-color: #e53935;
 }
 
-.pagination {
-    margin-top: -50px;
-    margin-right: 50px;
-    justify-content: flex-end;
+/* Pagination */
+ .pagination {
     display: flex;
+    justify-content: center;
     gap: 8px;
-    font-family: Barlow, sans-serif;
+    margin-top: 20px;
 }
 
-.pagination a {
-    text-decoration: none;
-    padding: 6px 12px;
+.pagination button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
     border-radius: 4px;
-    color: black;
-    background: white;
+    transition: 0.3s;
+    font-weight: bold;
 }
 
-.pagination a.active {
-    background: white;
-    color: black;
+.pagination button.active {
+    background: navy;
+    color: white;
 }
 
-.pagination a:hover {
+.pagination button:hover {
     background: #acacb4;
 }
 
-.pagination-table {
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.pagination-table td {
-    padding: 10px;
-    font-size: 1rem;
-    color: #010066;
-    font-weight: 700;
+.pagination button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
 }

@@ -34,7 +34,7 @@ body {
 .logo {
     width: 200px;
     height: 150px;
-    background-image: url('logo2.png'); 
+    background-image: url('logo.png'); 
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

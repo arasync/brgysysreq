@@ -12,7 +12,7 @@
 <div class="container">
     <div class="sidebar">
         <div class="logo">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="logo2.png" alt="Logo" class="logo">
         </div>
         <nav>
             <ul>
@@ -28,8 +28,11 @@
     <div class="main-content">
         <div class="dashboard-header">
             <h2>USER MANAGEMENT</h2>
-            <button class="notif-button"><img src="notif.png" alt="Notifications" class="notif-logo"></button>
+            <button class="notif-button" onclick="location.href='notif.html'">
+                <img src="notif.png" alt="Notifications Logo" class="notif-logo">
+            </button>
         </div>
+      
         
         <div class="search-container">
             <input type="text" placeholder="Search here">
@@ -52,14 +55,19 @@
                     <th>Email Address</th>
                     <th>Address</th>
                     <th>Contact Number</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <!-- User data will be inserted dynamically here -->
+                <!-- Users will be dynamically added here -->
             </tbody>
-        </table>
+            </table>
+
+        <!-- Pagination Controls -->
+        <div class="pagination"></div>
     </div>
 </div> 
 <script src="user.js"></script>
- </body>
-</html>
+        </body>
+ </html>
