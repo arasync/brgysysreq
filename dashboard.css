@@ -249,12 +249,14 @@ nav ul li.active button {
     font-family: Barlow, sans-serif;
     font-weight: 700;
     margin-right: 30px;
+    margin-right: 30px;
 }
 
 .pending-requests-box .label {
     font-size: 1rem;
     color: #888;
     margin-top: 10px;
+    margin-left: 20px;
     margin-left: 20px;
     font-family: Barlow, sans-serif;
     font-weight: 400;
@@ -263,6 +265,7 @@ nav ul li.active button {
 .approved-requests-box {
     background-color: #ffffff;
     width: 500px; 
+    height: 260px;
     height: 260px;
     padding: 30px;
     margin-right: 27px;
@@ -298,12 +301,14 @@ nav ul li.active button {
     font-family: Barlow, sans-serif;
     font-weight: 700;
     margin-right: 30px;
+    margin-right: 30px;
 }
 
 .approved-requests-box .label {
     font-size: 1rem;
     color: #888;
     margin-top: 10px; 
+    margin-left: 20px;
     margin-left: 20px;
     font-family: Barlow, sans-serif;
     font-weight: 400;
