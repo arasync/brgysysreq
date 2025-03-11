@@ -19,23 +19,20 @@ body {
 .sidebar {
     background-color: #010066;
     color: white;
-    width: 270px;
+    width: 300px;
     padding: 20px;
-    border-radius: 30px;
-    margin-left: 25px;
-    height: 680px;
-    margin-top: 23px;
+    height: 740px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center; 
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .logo img {
-    width: 150px; 
+    width: 160px; 
     height: auto; 
     margin-top: 30px;
 }
@@ -43,11 +40,10 @@ body {
 nav ul {
     list-style-type: none;
 }
-
 nav ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%; 
 }
 
@@ -67,30 +63,23 @@ nav ul li button {
     cursor: pointer;
     display: flex;
     align-items: center;
-    height: 40px; 
-    padding: 10px; 
-    width: 100%;
+    height: 40px;
+    padding: 10px;
+    width: 100%; 
     transition: background 0.3s, color 0.3s, border-radius 0.3s;
     border-radius: 10px;
 }
 
 nav ul li button:hover {
-    background: #A4A4A4;
-    color: #fff; 
+    background: #A4A4A4; 
+    color: #fff;
     border-radius: 10px; 
 }
 
 nav ul li button.active, nav ul li button:hover {
     background: #0C0B48; 
-    color: #fff; 
+    color: #fff;
     border-radius: 10px; 
-}
-
-nav ul li button img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-left: 80px;
 }
 
 nav ul li.active button {
@@ -120,31 +109,6 @@ nav ul li.active button {
     color: #010066;
     font-family: Barlow, sans-serif;
     font-weight: 800;
-}
-
-.search-container {
-    position: relative;
-    width: 100%;
-    max-width: 1130px;
-    margin-top: -5px; 
-}
-
-.search-container input {
-    width: 100%;
-    padding: 10px 40px 10px 12px; 
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.search-container .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    margin-top: 7.5px;
 }
 
 .dashboard-header input {
