@@ -19,23 +19,20 @@ body {
 .sidebar {
     background-color: #010066;
     color: white;
-    width: 270px;
+    width: 300px;
     padding: 20px;
-    border-radius: 30px;
-    margin-left: 25px;
-    height: 680px;
-    margin-top: 23px;
+    height: 740px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center; 
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .logo img {
-    width: 150px; 
+    width: 160px; 
     height: auto; 
     margin-top: 30px;
 }
@@ -43,17 +40,16 @@ body {
 nav ul {
     list-style-type: none;
 }
-
 nav ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%; 
 }
 
 nav ul li img.menu-logo {
     margin-right: 30px;
-    margin-left: 0px;
+    margin-left: 0px; 
 }
 
 nav ul li button {
@@ -67,7 +63,7 @@ nav ul li button {
     cursor: pointer;
     display: flex;
     align-items: center;
-    height: 40px; 
+    height: 40px;
     padding: 10px;
     width: 100%; 
     transition: background 0.3s, color 0.3s, border-radius 0.3s;
@@ -75,7 +71,7 @@ nav ul li button {
 }
 
 nav ul li button:hover {
-    background: #A4A4A4;
+    background: #A4A4A4; 
     color: #fff;
     border-radius: 10px; 
 }
@@ -84,13 +80,6 @@ nav ul li button.active, nav ul li button:hover {
     background: #0C0B48; 
     color: #fff;
     border-radius: 10px; 
-}
-
-nav ul li button img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-left: 80px;
 }
 
 nav ul li.active button {
@@ -108,7 +97,7 @@ nav ul li.active button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px; 
+    margin-bottom: 30px;
     margin-top: 20px;
     padding-left: 25px;
 }
@@ -122,12 +111,24 @@ nav ul li.active button {
     font-weight: 800;
 }
 
+.notif-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 150px;
+}
+
+.notif-logo {
+    width: 30px;   
+    height: 30px;
+}
+
 .search-container {
     position: relative;
     width: 100%;
-    max-width: 1130px;
+    max-width: 1000px;
     margin-bottom: 30px;
-    margin-left: 50px; 
+    margin-left: 20px; 
     margin-top: 10px;
 }
 
@@ -150,45 +151,40 @@ nav ul li.active button {
     height: 20px;
 }
 
-.notif-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 27px; 
-}
-
-.notif-logo {
-    width: 30px; 
-    height: 30px;
-}
-
- .requests-table {
+.requests-table {
     width: 100%;
-    max-width: 1130px;
+    max-width: 1000px; /* Align with search container */
     background: white;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 0 auto 20px 20px;
     font-family: Barlow, sans-serif;
+    overflow-x: auto; /* Adds horizontal scroll if needed */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
- }
+    table-layout: fixed;
+}
 
 table th, table td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
 }
 
- table th {
+table th {
     color: navy;
     font-weight: bold;
     background: #f4f4f4;
 }
+
 
 .action-button {
     padding: 8px 12px;
