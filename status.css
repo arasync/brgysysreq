@@ -21,7 +21,7 @@ body {
     color: white;
     width: 300px;
     padding: 20px;
-    height: 740px;
+    height: 750px;
 }
 
 .logo {
@@ -115,21 +115,12 @@ nav ul li.active button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 150px;
+    margin-right: 70px;
 }
 
 .notif-logo {
     width: 30px;   
     height: 30px;
-}
-
-.search-container {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin-bottom: 30px;
-    margin-left: 20px; 
-    margin-top: 10px;
 }
 
 .search-container input {
@@ -153,7 +144,7 @@ nav ul li.active button {
 
 .requests-table {
     width: 100%;
-    max-width: 1000px; /* Align with search container */
+    max-width: 1070px; /* Align with search container */
     background: white;
     padding: 20px;
     border-radius: 20px;
