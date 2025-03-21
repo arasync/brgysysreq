@@ -21,7 +21,7 @@ body {
     color: white;
     width: 300px;
     padding: 20px;
-    height: 740px;
+    height: 750px;
 }
 
 .logo {
@@ -115,7 +115,7 @@ nav ul li.active button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 150px;
+    margin-right: 70px;
 }
 
 .notif-logo {
@@ -126,7 +126,7 @@ nav ul li.active button {
 .search-container {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1070px;
     margin-bottom: 30px;
     margin-left: 20px; 
     margin-top: 10px;
@@ -184,6 +184,7 @@ nav ul li.active button {
 .popup {
     display: none;
     position: fixed;
+    margin-left: 90px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -203,9 +204,9 @@ nav ul li.active button {
 
 /* TABLE STYLING */
 table {
-    width: 95%;
+    width: 92%;
     margin: 40px auto;
-    margin-left: 20px auto;
+    margin-left: 20px;
     font-size: 16px;
     border-collapse: collapse;
     background-color: #ffffff; 
