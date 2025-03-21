@@ -19,9 +19,13 @@ body {
 .sidebar {
     background-color: #010066;
     color: white;
-    width: 300px;
+    width: 300px; 
     padding: 20px;
-    height: 740px;
+    height: 750px;
+    resize: horizontal; 
+    overflow: auto; 
+    min-width: 300px; 
+    max-width: 500px; 
 }
 
 .logo {
@@ -115,7 +119,7 @@ nav ul li.active button {
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 150px;
+    margin-right: 156px;
 }
 
 .notif-logo {
