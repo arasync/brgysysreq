@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="notif.css">
 </head>
+
 <body>
 
     <div class="container">
         <div class="sidebar">
             <div class="logo">
-                <img src="logo2.png" alt="Logo" class="logo">
+                <img src="logo.png" alt="Logo" class="logo">
               </div>
           <nav>
             <ul>
@@ -52,16 +53,32 @@
     
     <div class="main-content">
       <div class="dashboard-header">
-        <h2>NOTIFICATIONS</h2>
-        <h3>All Notifications</h3>
-      </div>
-      <div class="tabs">
-        <button class="tab active" onclick="showTab('new')">New</button>
-        <button class="tab" onclick="showTab('unread')">Unread</button>
-      </div>
-    </div>
+        <h2>NOTIFICATIONS</h2> 
+        <p class="subtitle">All Notification</p>
+        <div class="notification">
+            <div class="notification-title">• New Document Request</div>
+            <div class="notification-content">
+                <div class="profile-image">A</div>
+                <div class="text-content">
+                    <div class="user-name">Ara b</div>
+                    <div class="doc-type">Barangay Clearance</div>
+                    <div class="timestamp">1 minute ago</div>
+                </div>
+            </div>
+        </div>
 
+        <div class="notification">
+            <div class="notification-title">• New User Sign Up</div>
+            <div class="notification-content">
+                <div class="profile-image">J</div>
+                <div class="text-content">
+                    <div class="user-name">John Doe</div>
+                    <div class="doc-type"></div>
+                    <div class="timestamp">About 5 hours ago</div>
+                </div>
+            </div>
+        </div>
+    
     <script src="notif.js"></script>
-</body>
-</html>
 
+</body>    
